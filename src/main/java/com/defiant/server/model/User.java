@@ -1,5 +1,7 @@
 package com.defiant.server.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Locale;
@@ -14,8 +16,19 @@ public class User implements Serializable {
     private String username;
     @Basic
     private String email;
+    @OneToOne
+    @JsonIgnore
+    private Wire wire;
     @Basic
     private Locale locale;
+
+    public Wire getWire() {
+        return wire;
+    }
+
+    public void setWire(Wire wire) {
+        this.wire = wire;
+    }
 
     public Long getId() {
         return id;

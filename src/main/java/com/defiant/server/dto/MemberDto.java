@@ -1,4 +1,4 @@
-package com.defiant.server.model;
+package com.defiant.server.dto;
 
 public class MemberDto {
 

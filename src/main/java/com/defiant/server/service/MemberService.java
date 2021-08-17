@@ -1,7 +1,7 @@
 package com.defiant.server.service;
 
 import com.defiant.server.model.Member;
-import com.defiant.server.model.MemberDto;
+import com.defiant.server.dto.MemberDto;
 import com.defiant.server.repository.MemberRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,8 +18,16 @@ public class MemberService {
         return repository.save(Member.from(dto));
     }
 
+    public void saveOrUpdate(Member member) {
+        repository.save(member);
+    }
+
     public void delete(Long id) {
         repository.findById(id).ifPresent(repository::delete);
+    }
+
+    public Member findMemberById(Long id) {
+        return repository.getById(id);
     }
 
     public List<Member> getAllMembers() {

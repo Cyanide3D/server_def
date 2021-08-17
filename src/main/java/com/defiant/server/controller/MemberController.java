@@ -1,11 +1,9 @@
 package com.defiant.server.controller;
 
 import com.defiant.server.model.Member;
-import com.defiant.server.model.MemberDto;
+import com.defiant.server.dto.MemberDto;
 import com.defiant.server.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

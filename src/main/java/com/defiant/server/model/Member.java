@@ -1,5 +1,8 @@
 package com.defiant.server.model;
 
+import com.defiant.server.dto.MemberDto;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -17,6 +20,9 @@ public class Member {
     private Long currentClanPoints;
     @Basic
     private String note;
+    @OneToOne
+    @JsonIgnore
+    private Wire wire;
     @Enumerated(EnumType.STRING)
     private Role role;
 
@@ -29,6 +35,14 @@ public class Member {
         this.role = role;
         this.lastWeekClanPoints = 0L;
         this.note = "";
+    }
+
+    public Wire getWire() {
+        return wire;
+    }
+
+    public void setWire(Wire wire) {
+        this.wire = wire;
     }
 
     public long getCurrentWeekClanPoints() {
