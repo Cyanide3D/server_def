@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="content">
+    <p th:text="${'Кол-во человек в клане: ' + statistic.getMemberAmount()}"></p>
+    <p th:text="${'Кол-во офицеров в клане: ' + statistic.getOfficerAmount()}"></p>
+    <br>
+    <p th:text="${'Клановые очки: ' + statistic.getClanPoints()}"></p>
+    <p th:text="${'Клановые очки за неделю: ' + statistic.getWeekClanPoints()}"></p>
+</div>
+</body>
+</html>

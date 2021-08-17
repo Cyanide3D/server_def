@@ -1,0 +1,29 @@
+server:
+  port: 80
+spring:
+  jpa:
+    generate-ddl: true
+  main:
+    allow-bean-definition-overriding: true
+  #    hibernate:
+  #      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://localhost:5432/practice
+    username: postgres
+    password: root
+security:
+  oauth2:
+    client:
+      clientId: 806992834464710686
+      clientSecret: q3rQjoiWZQRT6HRW8_p0ceq3PP-5BHwB
+      clientAuthenticationScheme: form
+      scope: identify
+      accessTokenUri: https://discord.com/api/oauth2/token
+      userAuthorizationUri: https://discord.com/api/oauth2/authorize
+#      id: 806992834464710686
+#      client-id: 806992834464710686
+#      grant-type: authorization_code
+    resource:
+#      userInfoUri: http://discordapp.com/api/users/@me
+      preferTokenInfo: true
+      user-info-uri: https://discordapp.com/api/users/@me

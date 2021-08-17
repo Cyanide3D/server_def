@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="content">
+    <a href="/statistic/members">СТАТИСТИКА ЗА НЕДЕЛЮ</a>
+    <br>
+    <table class="content__table">
+        <tr>
+            <th>НИКНЕЙМ</th>
+            <th>ОК</th>
+            <th>ОК ЗА НЕДЕЛЮ</th>
+            <th>ОК ПРЕД НЕДЕЛИ</th>
+            <th>ПОМЕТКИ</th>
+        </tr>
+        <tr th:each="member : ${members}">
+            <td><p th:text="${member.nickname}"></p></td>
+            <td><p th:text="${member.getCurrentClanPoints()}"></p></td>
+            <td><p th:text="${member.getCurrentWeekClanPoints()}"></p></td>
+            <td><p th:text="${member.getLastWeekClanPoints()}"></p></td>
+            <td><p th:text="${member.getNote()}"></p></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
